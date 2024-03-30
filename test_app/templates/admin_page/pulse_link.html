@@ -1,0 +1,259 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!----======== CSS ======== -->
+    <link rel="stylesheet" href="{% static 'elderly_monitoring/css/heart_rate_link.css' %}">
+     
+    <!----===== Iconscout CSS ===== -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+
+    <title>Admin Dashboard Panel</title>
+</head>
+<body>
+    <nav>
+        <div class="logo-name">
+            <div class="logo-image">
+               <img src="images/logo.png" alt="">
+            </div>
+            <span class="logo_name">Nursing Monitoring</span>
+        </div>
+        <div class="menu-items">
+            <ul class="nav-links">
+                <li><a href="{% url 'home'%}">
+                    <i class="uil uil-estate"></i>
+                    <span class="link-name">Dashboard</span>
+                </a></li>
+                <li><a href="{% url 'about'%}">
+                    <i class="uil uil-files-landscapes"></i>
+                    <span class="link-name">About</span>
+                </a></li>
+                <li><a href="{% url 'patients'%}">
+                    <i class="uil uil-chart"></i>
+                    <span class="link-name">Patients Analytics</span>
+                </a></li>
+            </ul>
+            <ul class="logout-mode">
+                <li><a href="#">
+                    <i class="uil uil-signout"></i>
+                    <span class="link-name">Logout</span>
+                </a></li>
+                <li class="mode">
+                    <a href="#">
+                        <i class="uil uil-moon"></i>
+                        <span class="link-name">Dark Mode</span>
+                    </a>
+                    <div class="mode-toggle">
+                        <span class="switch"></span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="dashboard">
+        <div class="top">
+            <i class="uil uil-bars sidebar-toggle"></i>
+            <div class="search-box">
+                <i class="uil uil-search"></i>
+                <input type="text" placeholder="Search here...">
+            </div>
+        </div>
+
+        <div class="dash-content">
+            <div class="overview">
+                <div class="title">
+                    <i class="uil uil-chart"></i>
+                    <span class="text">Patient Analysis</span>
+                </div>
+
+                <div class="overlay" data-overlay></div>
+
+                <!-- MODAL -->
+                <div class="modal" data-modal>
+                    <div class="modal-close-overlay" data-modal-overlay></div>
+                    <div class="modal-content">
+                        <button class="modal-close-btn" data-modal-close>
+                            <ion-icon class="close-icon" name="close-outline"></ion-icon>
+                        </button>
+                    
+                
+                        <div class="priority">
+                          <div class="priority-column">
+                            <div class="priority-row">
+                              <h2 class="priority-heading">Age 5-7 : 75-115 bpm</h2>
+                              <!-- Add content for Low priority -->
+                            </div>
+                            <div class="priority-row">
+                              <h2 class="priority-heading">Age 7-9 : 70-110 bpm</h2>
+                              <!-- Add content for Normal priority -->
+                            </div>
+                            <div class="priority-row">
+                              <h2 class="priority-heading">Older >15 : 60-100 bpm</h2>
+                              <!-- Add content for High priority -->
+                            </div>
+                          </div>
+                        </div>
+              
+                    </div>
+              
+                  </div>
+              
+                </div>
+
+
+                <div class="clearfix">
+                    <section id="heartrate" class="faq">
+                        <div class="container" data-aos="fade-up">
+                            <div class="section-header">
+                                <h2>PULSE</h2>
+                            </div>
+
+
+                            <!-- PRODUCT GRID -->
+                            <div class="product-main">
+                                <div class="product-grid">
+                                    <div class="showcase">
+                                        <div class="showcase-banner">
+                                            <!-- Heart Rate Picture Goes Here -->
+                                            <img src="https://i.pinimg.com/564x/a7/48/fd/a748fd9173c156678536dc59346fe4d8.jpg" alt="Heart Rate" />
+                                        </div>
+                                    </div>
+                                    <div class="showcase">
+                                        <div class="showcase-banner">
+                                            <!-- Merged Paragraph Goes Here -->
+                                            <p>
+                                                Your pulse rate, also known as your heart rate, is the number of times your heart beats per minute.
+                                                A normal resting heart rate should be between 60 to 100 beats per minute, but it can vary from minute to minute.A normal resting heart rate for healthy adults is between 60 and 100 beats per minute. A pulse rate is also known as a heart rate A resting heart rate that is higher than 120 bpm could be a sign of an abnormal heart rhythm
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <div class="header-search-container">
+                        <input type="search" class="search-field" placeholder="Enter patient name...">
+                        <div class="filter-options">
+                            <div class="filter-option" data-value="low">Low</div>
+                            <div class="filter-option" data-value="normal">Normal</div>
+                            <div class="filter-option" data-value="high">High</div>
+                        </div>
+                    </div>
+                    <div>
+                        <button onclick="filterPulse('All')">All</button>
+                        <button onclick="filterPulse('Low')">Low</button>
+                        <button onclick="filterPulse('Normal')">Normal</button>
+                        <button onclick="filterPulse('High')">High</button>
+                    </div>
+
+                    <table id="pulse-data">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Pulse Rate</th>
+                                <th>Condition</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Table rows will be populated dynamically using JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+      const modal = document.querySelector('[data-modal]');
+const modalCloseBtn = document.querySelector('[data-modal-close]');
+const modalCloseOverlay = document.querySelector('[data-modal-overlay]');
+
+// modal function
+const modalCloseFunc = function () { modal.classList.add('closed') }
+
+// modal eventListener
+modalCloseOverlay.addEventListener('click', modalCloseFunc);
+modalCloseBtn.addEventListener('click', modalCloseFunc);
+        function filterPulse(condition) {
+            const tableRows = document.querySelectorAll('#pulse-data tbody tr');
+
+            tableRows.forEach(row => {
+                const rowCondition = row.querySelector('td:nth-child(3)').textContent;
+
+                if (condition === 'All' || rowCondition === condition) {
+                    row.style.display = 'table-row';
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+        }
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const pulseDataContainer = document.getElementById('pulse-data');
+
+            // Replace with your actual Airtable API key, Base ID, and table name
+            const apiKey = 'pat7hpgmy2itPqWrX.da8a874efe149fc7f8569d6297d44973b6175731bb489123aa14de17b35686ae';
+            const baseId = 'app2WlcjTHxf5aCIZ';
+            const tableName = 'smartwatch_data';
+
+            // Construct the Airtable API URL
+            const apiUrl = `https://api.airtable.com/v0/${baseId}/${tableName}`;
+
+            // Set up the headers for the API request
+            const headers = {
+                'Authorization': `Bearer ${apiKey}`,
+                'Content-Type': 'application/json',
+            };
+
+            // Make the GET request using the Fetch API
+            fetch(apiUrl, { headers })
+                .then(response => response.json())
+                .then(data => {
+                    const tbody = pulseDataContainer.querySelector('tbody');
+
+                    data.records.forEach(record => {
+                        const name = record.fields['Name'];
+                        const pulseRate = record.fields['Pulse'];
+
+                        const row = document.createElement('tr');
+                        row.innerHTML = `
+                          <td>${name}</td>
+                          <td>${pulseRate || 'N/A'}</td>
+                          <td>${getPulseCondition(pulseRate)}</td>
+                        `;
+
+                        tbody.appendChild(row);
+                    });
+                })
+                .catch(error => {
+                    console.error('Error fetching data:', error);
+                    // Handle errors here, e.g., display an error message to the user
+                });
+
+            // Function to determine condition based on pulse rate
+            function getPulseCondition(pulseRate) {
+                if (!pulseRate || isNaN(pulseRate)) {
+                    return 'Unknown';
+                } else if (pulseRate < 60) {
+                    return 'Low';
+                } else if (pulseRate >= 60 && pulseRate <= 100) {
+                    return 'Normal';
+                } else {
+                    return 'High';
+                }
+            }
+        });
+    </script>
+
+    <script src="{% static 'update.js' %}"></script>
+
+</body>
+</html>

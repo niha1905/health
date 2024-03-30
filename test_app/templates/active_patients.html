@@ -1,0 +1,197 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="{% static 'elderly_monitoring/css/heart_rate_link.css' %}">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <title>Admin Dashboard Panel</title>
+</head>
+<body>
+    <nav>
+        <div class="logo-name">
+            <div class="logo-image">
+               <img src="images/logo.png" alt="">
+            </div>
+
+            <span class="logo_name">Nursing Monitoring</span>
+        </div>
+
+        <div class="menu-items">
+            <ul class="nav-links">
+                <li><a href="admin.html">
+                    <i class="uil uil-estate"></i>
+                    <span class="link-name">Dashboard</span>
+                </a></li>
+                <li><a href="about.html">
+                    <i class="uil uil-files-landscapes"></i>
+                    <span class="link-name">About</span>
+                </a></li>
+                <li><a href="patients.html">
+                    <i class="uil uil-chart"></i>
+                    <span class="link-name">Patients Analytics</span>
+                </a></li>
+               
+            </ul>
+            
+            <ul class="logout-mode">
+                <li><a href="#">
+                    <i class="uil uil-signout"></i>
+                    <span class="link-name">Logout</span>
+                </a></li>
+
+                <li class="mode">
+                    <a href="#">
+                        <i class="uil uil-moon"></i>
+                    <span class="link-name">Dark Mode</span>
+                </a>
+
+                <div class="mode-toggle">
+                  <span class="switch"></span>
+                </div>
+            </li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="dashboard">
+        <div class="top">
+            <i class="uil uil-bars sidebar-toggle"></i>
+
+            <div class="search-box">
+                <i class="uil uil-search"></i>
+                <input type="text" placeholder="Search here...">
+            </div>
+            
+            <!--<img src="images/profile.jpg" alt="">-->
+        </div>
+
+        <div class="dash-content">
+            <div class="overview">
+                <div class="title">
+                    <i class="uil uil-water"></i>
+                    <span class="text">Oxygen Saturation </span>
+                </div>
+
+                <div class="overlay" data-overlay></div>
+              
+                <!--
+                  - MODAL
+                -->
+              
+                <div class="modal" data-modal>
+              
+                  <div class="modal-close-overlay" data-modal-overlay></div>
+              
+                  <div class="modal-content">
+              
+                    <button class="modal-close-btn" data-modal-close>
+                       <ion-icon class="close-icon" name="close-outline"></ion-icon>
+                    </button>
+              
+              
+                <div class="priority">
+                  <div class="priority-column">
+                    <div class="priority-row">
+                      <h2 class="priority-heading">LOW : Oxygen Saturation below 90 to 94 %</h2>
+                      <!-- Add content for Low priority -->
+                    </div>
+                    <div class="priority-row">
+                      <h2 class="priority-heading">NORMAL : Oxygen Saturation between 95 and 100 %</h2>
+                      <!-- Add content for Normal priority -->
+                    </div>
+                    <div class="priority-row">
+                      <h2 class="priority-heading">HIGH : Oxygen Saturation above 100 %</h2>
+                      <!-- Add content for High priority -->
+                    </div>
+                  </div>
+              
+                  
+                
+              
+                    </div>
+              
+                  </div>
+              
+                </div>
+              
+              <div class="clearfix">
+                <section id="heartrate" class="faq">
+                  <div class="container" data-aos="fade-up">
+                    <div class="section-header">
+                      <h2>Oxygen Saturation</h2>
+                    </div>
+              
+                    <!-- PRODUCT GRID -->
+              
+                    <div class="product-main">
+              
+                      <div class="product-grid">
+              
+                        <div class="showcase">
+                          <div class="showcase-banner">
+                            <!-- Heart Rate Picture Goes Here -->
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVF-p--es2JXl64t_wAY5dEIxNjG7UkCQEjjcGINqxCw&s" alt="Heart Rate" width="30" height="20">
+                          </div>
+                        </div>
+              
+                        <div class="showcase">
+                          <div class="showcase-banner">
+                            <!-- Merged Paragraph Goes Here -->
+                            <p>
+                                Oxygen saturation measures the percentage of hemoglobin carrying oxygen in the blood, indicating respiratory efficiency and overall oxygen levels.
+                            </p>
+                          </div>
+                        </div>
+              
+                      </div>
+              
+                    </div>
+              
+                  </div>
+                </section>
+              
+              
+              <table>
+              <div class="header-search-container">
+                <input type="search" class="search-field" placeholder="Enter patient name...">
+                <div class="filter-options">
+                  <div class="filter-option" data-value="low">Low</div>
+                  <div class="filter-option" data-value="normal">Normal</div>
+                  <div class="filter-option" data-value="high">High</div>
+                </div>
+              </div>
+              
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Oxygen Saturation</th>
+                    <th>Condition</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      John Doe<br>
+                      Jane Smith<br>
+                      Bob Johnson
+                    </td>
+                    <td>
+                      <p>This is the main content of the page.</p>
+                    </td>
+                    <td>
+                      <p>This is the sidebar content.</p>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              
+              
+              <script src="update.js"></script>
+              
+</body>
+</html>

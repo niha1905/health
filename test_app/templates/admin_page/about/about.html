@@ -1,0 +1,125 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!----======== CSS ======== -->
+    <link rel="stylesheet" href="{% static 'elderly_monitoring\css\about.css' %}">
+     
+    <!----===== Iconscout CSS ===== -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+
+    <title>Admin Dashboard Panel</title>
+</head>
+<body>
+    <nav>
+        <div class="logo-name">
+            <div class="logo-image">
+               <img src="images/logo.png" alt="">
+            </div>
+
+            <span class="logo_name">Nursing Monitoring</span>
+        </div>
+
+        <div class="menu-items">
+            <ul class="nav-links">
+                <li><a href="{% url 'home'%}">
+                    <i class="uil uil-estate"></i>
+                    <span class="link-name">Dashboard</span>
+                </a></li>
+                <li><a href="{% url 'about'%}">
+                    <i class="uil uil-files-landscapes"></i>
+                    <span class="link-name">About</span>
+                </a></li>
+                <li><a href="{% url 'patients'%}">
+                    <i class="uil uil-chart"></i>
+                    <span class="link-name">Patients Analytics</span>
+                </a></li>
+               
+            </ul>
+            
+            <ul class="logout-mode">
+                <li><a href="#">
+                    <i class="uil uil-signout"></i>
+                    <span class="link-name">Logout</span>
+                </a></li>
+
+                <li class="mode">
+                    <a href="#">
+                        <i class="uil uil-moon"></i>
+                    <span class="link-name">Dark Mode</span>
+                </a>
+
+                <div class="mode-toggle">
+                  <span class="switch"></span>
+                </div>
+            </li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="dashboard">
+        <div class="top">
+            <i class="uil uil-bars sidebar-toggle"></i>
+
+            <div class="search-box">
+                <i class="uil uil-search"></i>
+                <input type="text" placeholder="Search here...">
+            </div>
+            
+            <!--<img src="images/profile.jpg" alt="">-->
+        </div>
+
+        <div class="dash-content">
+            <div class="overview">
+                <div class="title">
+                    <i class="uil uil-files-landscapes"></i>
+                    <span class="text">About</span>
+                </div>
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="about.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset=""UTF-8>
+    <title>OUR services section</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<boady>
+     <div class="container">
+     <div class="box">
+          <h2>01</h2>
+          <h3>ABOUT US</h3>
+          <p>Welcome to Your Nursing Home, where we are dedicated to providing exceptional healthcare services with a focus on patient well-being and comfort. .</p>
+      </div>
+<div class="box">
+          <h2>02</h2>
+          <h3>Competitive Advantage</h3>
+          <p>What sets us apart is our commitment to excellence, continuous improvement, and a patient-centric approach. We aim to exceed expectations in every aspect of healthcare..</p>
+      </div>
+<div class="box">
+          <h2>03</h2>
+          <h3>OUR FUTURE GOALS</h3>
+          <p>What sets us apart is our commitment to excellence, continuous improvement, and a patient-centric approach. We aim to exceed expectations in every aspect of healthcare..</p>
+      </div>
+<div class="box">
+          <h2>04</h2>
+          <h3>Value Provided</h3>
+          <p>At Your Nursing Home, we prioritize the well-being of our residents. We believe in creating an environment where they not only receive medical care but also experience emotional support and companionship.
+      
+Footer content .</p>
+      </div>
+      </div>
+ <div class="bottom-images">
+        <img src="https://imgs.search.brave.com/GI_Ohpu7gDoQ0OWKW1lC31SoSWgPpSuslhj_bpJfzZk/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/cHJlbWl1bS1waG90/by9ncm91cC1zZW5p/b3ItcmV0aXJlbWVu/dC1mcmllbmRzLWhh/cHBpbmVzcy1jb25j/ZXB0XzUzODc2LTI5/NDkwLmpwZz9zaXpl/PTYyNiZleHQ9anBn" alt="Image 1">
+         <img src="https://imgs.search.brave.com/jUygOqND51HMhwhnicTMZVkXPM2YI-xRXUOwhr0Z1Z4/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMudW5zcGxhc2gu/Y29tL3Bob3RvLTE1/MDQwMDQwMzA4OTIt/ZDA2YWRmOWZmYmNm/P3E9ODAmdz0xMDAw/JmF1dG89Zm9ybWF0/JmZpdD1jcm9wJml4/bGliPXJiLTQuMC4z/Jml4aWQ9TTN3eE1q/QTNmREI4TUh4bGVI/QnNiM0psTFdabFpX/UjhPWHg4ZkdWdWZE/QjhmSHg4ZkE9PQ" alt="Image 1">
+        <img src="https://imgs.search.brave.com/B4TcMVmF7Cr-zpjSY_hVk2s6AU7r9AvNZIEhvIkDXXY/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMTE5/MTM5NTIyMi9waG90/by9wb3J0cmFpdC1v/Zi1zbWlsaW5nLW11/bHRpLWV0aG5pYy1z/ZW5pb3ItZnJpZW5k/cy5qcGc_cz02MTJ4/NjEyJnc9MCZrPTIw/JmM9clpnbkRBMzhU/QXU1aVFLRDFLNnpT/Sm5WWlpkdDhpOG9N/R05OcURIcTdmdz0" alt="Image 2">
+    </div>
