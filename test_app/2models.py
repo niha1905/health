@@ -1,4 +1,4 @@
-
+'''
 # model.py
 
 from airtable import Airtable 
@@ -70,4 +70,4 @@ def get_active_patients(steps_threshold=10000):
     except Exception as e:
         print(f"Error fetching records: {e}")
 
-    
+'''

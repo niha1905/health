@@ -101,7 +101,9 @@ document.addEventListener('DOMContentLoaded', function () {
     .then(data => {
       const entries = data.records.map(record => ({
         name: record.fields['Name'],
-        gender: record.fields['Gender'], // Assuming you have a "Gender" field
+        gender: record.fields['Gender'],
+        nursingHome: record.fields['nursing home'],
+        phoneNumber: record.fields['Phone Number'], // Assuming you have a "Gender" field
       }));
 
       entries.forEach(entry => {
@@ -114,6 +116,16 @@ document.addEventListener('DOMContentLoaded', function () {
         genderElement.className = 'data-list';
         genderElement.textContent = entry.gender;
         airtableDataContainer.appendChild(genderElement);
+
+        const nursingHomeElement = document.createElement('span');
+        nursingHomeElement.className = 'data-list';
+        nursingHomeElement.textContent = entry.nursingHome;
+        airtableDataContainer.appendChild(nursingHomeElement);
+
+        const phoneNumberElement = document.createElement('span');
+        phoneNumberElement.className = 'data-list';
+        phoneNumberElement.textContent = entry.phoneNumber;
+        airtableDataContainer.appendChild(phoneNumberElement);
       });
     })
     .catch(error => {

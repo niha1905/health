@@ -110,6 +110,7 @@ class PatientRecord:
                f"Nursing_Home={self.Nursing_Home}, Gender={self.Gender}, Photo={self.Photo}, " \
                f"Phone_Number={self.Phone_Number})"
 
+'''
 def get_active_patients(steps_threshold=10000):
     
     try:
@@ -147,7 +148,7 @@ def get_active_patients(steps_threshold=10000):
     
 
 
-
+'''
 
 
 
